@@ -57,6 +57,12 @@ pipeline {
                     git config user.name "Salman Malik"
                     BUILD_NUMBER=${BUILD_NUMBER}
                     git pull origin main
+    
+                    # Clean up build artifacts and untracked files
+                    git clean -df
+                    git reset --hard HEAD
+
+                    # Update the deployment file
                     sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" spring-boot-app-manifests/deployment.yml
                     git add spring-boot-app-manifests/deployment.yml
                     git commit -m "Update deployment image to version ${BUILD_NUMBER}"
