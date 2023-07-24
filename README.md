@@ -42,7 +42,7 @@ This guide provides step-by-step details to set up an end-to-end Jenkins pipelin
 
 2. **ArgoCD-secret.png:** This image shows the Kubernetes secret created for ArgoCD. This secret is used to store sensitive information like passwords, tokens, or keys. Kubernetes uses base64 encoded secrets which will generate you a password for your ArgoCD UI and you can proceed with 'admin' as the username. 
 
-3. **Argocd-scv-edit.png:** This screenshot displays the ArgoCD ServiceAccount edit page. It shows the permissions and roles associated with the ServiceAccount. Nanigate to type where the cursor is located at change it to NodePort for accessing ArgoCD UI from your browser. 
+3. **Argocd-scv-edit.png:** This screenshot displays the ArgoCD ServiceAccount edit page. It shows the permissions and roles associated with the ServiceAccount. Navigate to type where the cursor is located at change it to **NodePort** for accessing ArgoCD UI from your browser. 
 
 4. **dockerhub.png:** This image shows the DockerHub page where the Docker images for the project are stored. It displays the list of repositories, tags, and other details related to the Docker images.
 
