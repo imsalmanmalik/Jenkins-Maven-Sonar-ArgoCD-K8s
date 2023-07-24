@@ -50,3 +50,6 @@ This guide provides step-by-step details to set up an end-to-end Jenkins pipelin
 
 6. **sonarqube-dashboard-static-code-analysis.png:** This shows the sonarqube dashboard which completes a static code analysis on the build artifact and generates a report. 
    
+## Setting and Running the Project
+
+**Navigate to the "spring-boot-app" directory and go through the documentation for better understanding**
