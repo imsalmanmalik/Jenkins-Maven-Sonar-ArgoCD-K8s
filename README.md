@@ -1,6 +1,6 @@
 # Jenkins Pipeline Setup Guide
 
-This guide provides step-by-step details to set up an end-to-end Jenkins pipeline for a Java application using SonarQube, Argo CD, Helm, and Kubernetes.
+This guide provides step-by-step details to set up an end-to-end Jenkins pipeline for a Java application using SonarQube, Argo CD and Kubernetes.
 
 ## Prerequisites
 
@@ -38,17 +38,45 @@ This guide provides step-by-step details to set up an end-to-end Jenkins pipelin
 
 ## Screenshots
 
-1. **ArgoCD-UI.png:** This screenshot showcases the ArgoCD user interface displaying the status of the application deployments. It provides a visual representation of the application's health, sync status, and other relevant details.
+1. ![ArgoCD UI](ArgoCD-UI.png) 
 
-2. **ArgoCD-secret.png:** This image shows the Kubernetes secret created for ArgoCD. This secret is used to store sensitive information like passwords, tokens, or keys. Kubernetes uses base64 encoded secrets which will generate you a password for your ArgoCD UI and you can proceed with 'admin' as the username. 
+This screenshot showcases the ArgoCD user interface displaying the status of the application deployments. It provides a visual representation of the application's health, sync status, and other relevant details.
 
-3. **Argocd-scv-edit.png:** This screenshot displays the ArgoCD ServiceAccount edit page. It shows the permissions and roles associated with the ServiceAccount. Navigate to "type" where the cursor is located at change it to **NodePort** for accessing ArgoCD UI from your browser. 
+2. ![ArgoCD-secret](ArgoCD-secret.png) 
 
-4. **dockerhub.png:** This image shows the DockerHub page where the Docker images for the project are stored. It displays the list of repositories, tags, and other details related to the Docker images.
+This image shows the Kubernetes secret created for ArgoCD. This secret is used to store sensitive information like passwords, tokens, or keys. Kubernetes uses base64 encoded secrets which will generate you a password for your ArgoCD UI and you can proceed with 'admin' as the username. 
 
-5. **minikube-service-list.png:** This command lists the services our minikube cluster is running locally. you can use the 'example-argocd-server' URL to access the UI.
+3. ![Argocd-svc-edit](Argocd-scv-edit.png)
 
-6. **sonarqube-dashboard-static-code-analysis.png:** This shows the sonarqube dashboard which completes a static code analysis on the build artifact and generates a report. 
+This screenshot displays the ArgoCD ServiceAccount edit page. It shows the permissions and roles associated with the ServiceAccount. Navigate to "type" where the cursor is located at change it to **NodePort** for accessing ArgoCD UI from your browser. 
+
+4. ![dockerhub UI](dockerhub.png)
+
+This image shows the DockerHub page where the Docker images for the project are stored. It displays the list of repositories, tags, and other details related to the Docker images.
+
+5. ![minikube-service-list](minikube-service-list.png) 
+
+This command lists the services our minikube cluster is running locally. you can use the 'example-argocd-server' URL to access the UI.
+
+6. ![sonarqube-dashboard-static-code-analysis](sonarqube-dashboard-static-code-analysis.png)
+
+This shows the sonarqube dashboard which completes a static code analysis on the build artifact and generates a report. 
+
+## Configure a Sonar Server locally
+
+```
+apt install unzip
+adduser sonarqube
+wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-9.4.0.54424.zip
+unzip *
+chmod -R 755 /home/sonarqube/sonarqube-9.4.0.54424
+chown -R sonarqube:sonarqube /home/sonarqube/sonarqube-9.4.0.54424
+cd sonarqube-9.4.0.54424/bin/linux-x86-64/
+./sonar.sh start
+```
+
+Now you can access the `SonarQube Server` on `http://<ip-address>:9000` 
+
    
 ## Setting Up And Running The Project
 
