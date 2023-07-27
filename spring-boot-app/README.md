@@ -11,7 +11,7 @@ Checkout the repo and move to the directory
 
 ```
 git clone https://github.com/imsalmanmalik/Jenkins-Maven-Sonar-ArgoCD-K8s/
-cd java-maven-sonar-argocd-k8s/sprint-boot-app
+cd sprint-boot-app
 ```
 
 ### Accessing the application
