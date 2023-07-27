@@ -10,29 +10,13 @@ This is a MVC architecture based application where controller returns a page wit
 Checkout the repo and move to the directory
 
 ```
-git clone https://github.com/iamsalmanmalik/Jenkins-Maven-Sonar-ArgoCD-K8s/java-maven-sonar-argocd-k8s/sprint-boot-app
+git clone https://github.com/imsalmanmalik/Jenkins-Maven-Sonar-ArgoCD-K8s/
 cd java-maven-sonar-argocd-k8s/sprint-boot-app
 ```
 
-Execute the Maven targets to generate the artifacts
+The above maven target stroes the artifacts to the `target` directory
 
-```
-mvn clean package
-```
-
-The above maven target stroes the artifacts to the `target` directory. You can either execute the artifact on your local machine
-(or) run it as a Docker container.
-
-** Note: To avoid issues with local setup, Java versions and other dependencies, I would recommend the docker way. **
-
-
-### Execute locally (Java 11 needed) and access the application on http://localhost:8080
-
-```
-java -jar target/spring-boot-web.jar
-```
-
-### The Docker way
+### Accessing the application
 
 Build the Docker Image
 
@@ -43,6 +27,7 @@ docker build -t jenkins-cicd-pipeline:v1 .
 ```
 docker run -d -p 8010:8080 -t jenkins-cicd-pipeline:v1
 ```
+This would execute the maven target and build the artifacts in a new directory named 'target'.
 
 Access the application on `http://<ip-address>:8010`
 
