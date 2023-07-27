@@ -38,29 +38,68 @@ This guide provides step-by-step details to set up an end-to-end Jenkins pipelin
 
 ## Screenshots
 
-1. ![ArgoCD UI](ArgoCD-UI.png) 
+1. This screenshot showcases the ArgoCD user interface displaying the status of the application deployments. It provides a visual representation of the application's health, sync status, and other relevant details.
 
-This screenshot showcases the ArgoCD user interface displaying the status of the application deployments. It provides a visual representation of the application's health, sync status, and other relevant details.
 
-2. ![ArgoCD-secret](ArgoCD-secret.png) 
 
-This image shows the Kubernetes secret created for ArgoCD. This secret is used to store sensitive information like passwords, tokens, or keys. Kubernetes uses base64 encoded secrets which will generate you a password for your ArgoCD UI and you can proceed with 'admin' as the username. 
 
-3. ![Argocd-svc-edit](Argocd-scv-edit.png)
+![ArgoCD UI](ArgoCD-UI.png) 
 
-This screenshot displays the ArgoCD ServiceAccount edit page. It shows the permissions and roles associated with the ServiceAccount. Navigate to "type" where the cursor is located at change it to **NodePort** for accessing ArgoCD UI from your browser. 
 
-4. ![dockerhub UI](dockerhub.png)
 
-This image shows the DockerHub page where the Docker images for the project are stored. It displays the list of repositories, tags, and other details related to the Docker images.
 
-5. ![minikube-service-list](minikube-service-list.png) 
 
-This command lists the services our minikube cluster is running locally. you can use the 'example-argocd-server' URL to access the UI.
+2. This image shows the Kubernetes secret created for ArgoCD. This secret is used to store sensitive information like passwords, tokens, or keys. Kubernetes uses base64 encoded secrets which will generate you a password for your ArgoCD UI and you can proceed with 'admin' as the username. 
 
-6. ![sonarqube-dashboard-static-code-analysis](sonarqube-dashboard-static-code-analysis.png)
 
-This shows the sonarqube dashboard which completes a static code analysis on the build artifact and generates a report. 
+
+
+![ArgoCD-secret](ArgoCD-secret.png) 
+
+
+
+
+3. This screenshot displays the ArgoCD ServiceAccount edit page. It shows the permissions and roles associated with the ServiceAccount. Navigate to "type" where the cursor is located at change it to **NodePort** for accessing ArgoCD UI from your browser. 
+
+
+
+![Argocd-svc-edit](Argocd-scv-edit.png)
+
+
+
+4. This image shows the DockerHub page where the Docker images for the project are stored. It displays the list of repositories, tags, and other details related to the Docker images.
+
+
+
+
+![dockerhub UI](dockerhub.png)
+
+
+
+
+
+5. This command lists the services our minikube cluster is running locally. you can use the 'example-argocd-server' URL to access the UI.
+
+
+
+![minikube-service-list](minikube-service-list.png) 
+
+
+
+
+
+
+6. This shows the sonarqube dashboard which completes a static code analysis on the build artifact and generates a report. 
+
+
+
+
+![sonarqube-dashboard-static-code-analysis](sonarqube-dashboard-static-code-analysis.png)
+
+
+
+
+
 
 ## Configure a Sonar Server locally
 
