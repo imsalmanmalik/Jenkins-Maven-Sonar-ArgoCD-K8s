@@ -21,7 +21,7 @@ pipeline {
     }
     stage('Static Code Analysis') {
       environment {
-        SONAR_URL = "http://13.50.106.44:9000"
+        SONAR_URL = "http://13.50.106.44:9000" // replace with the public ip-address of the instance you are using
       }
       steps {
         withCredentials([string(credentialsId: 'sonarqube', variable: 'SONAR_AUTH_TOKEN')]) {
@@ -63,7 +63,7 @@ pipeline {
                     git reset --hard HEAD
 
                     # Update the deployment file
-                    sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" spring-boot-app-manifests/deployment.yml
+                    sed -i "s|image: salmanmalik98/jenkins-cicd:.*|image: salmanmalik98/jenkins-cicd:${BUILD_NUMBER}|" spring-boot-app-manifests/deployment.yml
                     git add spring-boot-app-manifests/deployment.yml
                     git commit -m "Update deployment image to version ${BUILD_NUMBER}"
                     git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
