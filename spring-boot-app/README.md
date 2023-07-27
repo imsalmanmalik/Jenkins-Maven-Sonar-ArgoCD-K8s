@@ -14,8 +14,6 @@ git clone https://github.com/imsalmanmalik/Jenkins-Maven-Sonar-ArgoCD-K8s/
 cd java-maven-sonar-argocd-k8s/sprint-boot-app
 ```
 
-The above maven target stroes the artifacts to the `target` directory
-
 ### Accessing the application
 
 Build the Docker Image
@@ -27,7 +25,7 @@ docker build -t jenkins-cicd-pipeline:v1 .
 ```
 docker run -d -p 8010:8080 -t jenkins-cicd-pipeline:v1
 ```
-This would execute the maven target and build the artifacts in a new directory named 'target'.
+This would execute the maven target and build the artifacts in a new directory named `target`.
 
 Access the application on `http://<ip-address>:8010`
 
